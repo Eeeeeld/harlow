@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yvette Harlow | Freedom in Fashion</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="assets/style.css">
-
 </head>
 <body>
     <header id="main-header">
@@ -23,8 +21,8 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li>
-                        <a href="login.html" class="btn btn-outline" style="padding:8px 18px;">
-                            Login
+                        <a href="member.html" class="btn btn-outline" style="padding:8px 18px;">
+                            <i class="fas fa-user"></i> Member
                         </a>
                     </li>
                     <li>
@@ -59,9 +57,8 @@
 
             <div class="ad-carousel" id="ad-carousel">
                 <div class="ad-track" id="ad-track">
-
                     <div class="ad-slide">
-                        <img src="image/Y2.jpg" alt="Ad 1">
+                        <img src="image/Y1.jpg" alt="Ad 1">
                         <div class="ad-caption">
                             <h3>Daiquiri Dress</h3>
                             <p>Freedom in Every Stitch</p>
@@ -70,7 +67,7 @@
                     </div>
 
                     <div class="ad-slide">
-                        <img src="image/Y3.jpg" alt="Ad 2">
+                        <img src="image/Y2.jpg" alt="Ad 2">
                         <div class="ad-caption">
                             <h3>Clover Baby Tanks</h3>
                             <p>Effortless everyday wear</p>
@@ -79,7 +76,7 @@
                     </div>
 
                     <div class="ad-slide">
-                        <img src="image/Y4.jpg" alt="Ad 3">
+                        <img src="image/Y3.jpg" alt="Ad 3">
                         <div class="ad-caption">
                             <h3>Chasing Denim</h3>
                             <p>Minimal. Bold. You.</p>
@@ -88,19 +85,17 @@
                     </div>
 
                     <div class="ad-slide">
-                        <img src="image/Y5.jpg" alt="Ad 4">
+                        <img src="image/Y4.jpg" alt="Ad 4">
                         <div class="ad-caption">
                             <h3>Southside Shorts</h3>
                             <p>Comfort meets style</p>
                             <button class="ad-btn" data-id="4">Shop Now</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </section>
-
 
     <section id="collections" class="collections">
         <div class="container">
@@ -134,7 +129,7 @@
                         <span class="product-price">Rp 139.000</span>
                         <div class="product-actions">
                             <button class="btn add-cart">Add to Cart</button>
-                            <button class="wishlist-btn" data-id="1">
+                            <button class="wishlist-btn" data-id="2">
                                 <i class="fa-regular fa-heart"></i>
                             </button>
                         </div>
@@ -151,7 +146,7 @@
                         <span class="product-price">Rp 99.000</span>
                         <div class="product-actions">
                             <button class="btn add-cart">Add to Cart</button>
-                            <button class="wishlist-btn" data-id="1">
+                            <button class="wishlist-btn" data-id="3">
                                 <i class="fa-regular fa-heart"></i>
                             </button>
                         </div>
@@ -168,7 +163,7 @@
                         <span class="product-price">Rp 109.000</span>
                         <div class="product-actions">
                             <button class="btn add-cart">Add to Cart</button>
-                            <button class="wishlist-btn" data-id="1">
+                            <button class="wishlist-btn" data-id="4">
                                 <i class="fa-regular fa-heart"></i>
                             </button>
                         </div>
@@ -194,71 +189,70 @@
         </div>
     </section>
 
-<section id="about" class="about">
-    <div class="container">
-        <h2 class="section-title">About Our Team</h2>
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Our Team</h2>
 
-        <div class="team-member">
-            <div class="team-image">
-                <img src="image/eld.jpg" alt="張兒仁">
+            <div class="team-member">
+                <div class="team-image">
+                    <img src="image/eld.jpg" alt="張兔仕">
+                </div>
+                <div class="team-content">
+                    <h3>11150218 張兔仕</h3>
+                    <p>
+                        在實作電商功能的過程中,我遇到不少實際的技術問題,其中最具挑戰性的就是使用 localStorage
+                        來處理購物車與使用者資料的保存。一開始我對 localStorage 的理解只停留在「可以存資料」,
+                        實際實作時卻出現資料更新錯誤與狀態混亂的情況。透過這次專案,我真正理解了資料結構、
+                        JSON 轉換,以及狀態同步的重要性。
+                    </p>
+                </div>
             </div>
-            <div class="team-content">
-                <h3>11150218 張兒仁</h3>
-                <p>
-                    在實作電商功能的過程中，我遇到不少實際的技術問題，其中最具挑戰性的就是使用 localStorage
-                    來處理購物車與使用者資料的保存。一開始我對 localStorage 的理解只停留在「可以存資料」，
-                    實際實作時卻出現資料更新錯誤與狀態混亂的情況。透過這次專案，我真正理解了資料結構、
-                    JSON 轉換，以及狀態同步的重要性。
-                </p>
+
+            <div class="team-member reverse">
+                <div class="team-image">
+                    <img src="image/liao.jpg" alt="廖簡辰">
+                </div>
+                <div class="team-content">
+                    <h3>11214257 廖簡辰</h3>
+                    <p>
+                        很開心能與不同系、不同國籍的同學合作完成這次期末專案。
+                        在團隊中,我從組員身上學到許多實作經驗,也更清楚理解整學期所學內容在實務上的應用。
+                        雖然過程複雜,但完成後帶來很大的成就感,也讓我對未來進一步學習後端技術產生興趣。
+                    </p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="team-image">
+                    <img src="image/mar.jpg" alt="黃明慧">
+                </div>
+                <div class="team-content">
+                    <h3>11344274 黃明慧</h3>
+                    <p>
+                        這次做多媒體期末專案對我來說是一個很新的經驗。一開始我其實有點擔心自己做不出來,因為要完成的是一個真正的電商網站,而不只是單純的練習頁面。不過在實際開始進行之後,雖然過程中遇到不少困難,但在一步一步完成功能的同時,也慢慢累積了成就感。
+                        這個專案最大的收穫,是讓我更熟悉 HTML、CSS 和 JavaScript 的使用方式。以前上課多半只是照著範例做,但這次需要自己思考功能流程,像是購物流程、畫面排版與購物車等,也常常遇到奇怪的錯誤需要 Debug。雖然花了不少時間,但每次成功解決問題時,都會有種「原來如此」的開心感。另外,小組合作也讓我學到很多,我們會互相幫忙、一起討論卡住的地方,讓我更清楚了解專案其實不是一個人就能完成的,溝通與合作真的非常重要。
+                        雖然網站還有可以改進的地方,例如程式架構或介面細節,但我覺得以學生專案來說,我已經盡力完成,也從中學到了很多。這次期末專案不只是完成了一個網站,也讓我對前端設計更感興趣,同時也增加了我對自己的信心,覺得只要願意努力,其實我也做得到。
+                    </p>
+                </div>
+            </div>
+
+            <div class="team-member reverse">
+                <div class="team-image">
+                    <img src="image/vir.jpg" alt="黃飛立">
+                </div>
+                <div class="team-content">
+                    <h3>11344275 黃飛立</h3>
+                    <p>
+                        在製作這個網站的過程中,我對網頁設計與網站功能有了更深入的認識。從一開始要規劃網站的整體架構,到實際設計版面配置與功能操作,每一個步驟都需要仔細思考,才能讓網站使用起來順暢又清楚。
+                        在設計網站時,我學到網站架構的重要性。如果頁面分類不清楚,使用者在瀏覽時會感到困惑。因此,我在規劃時特別注意導覽列與頁面順序,希望使用者可以很快找到需要的資訊。這讓我了解到,好的網站不只是外觀好看,更重要的是操作方便。
+                        在實作購物車功能的過程中,我學到了如何讓網站具有互動性,也更加了解使用者體驗的重要性。像是商品加入購物車後即時顯示、可以調整商品數量,以及重新整理頁面後資料仍然保留,這些功能都能讓使用者在購物時感到更方便,也更願意繼續使用網站。
+                        此外,在網頁排版方面,我也學會使用簡單且一致的設計方式,讓畫面看起來整齊、不雜亂。透過這次的練習,我開始注意文字大小、圖片位置與空白間距,這些細節都會影響使用者閱讀與操作的感受。
+                        整體來說,這次網站製作是一個非常實用的學習經驗。它不只讓我將課堂上學到的理論實際應用出來,也提升了我解決問題與獨立完成作品的能力。未來如果還有相關的課程或專題,我希望能加入更多進階功能,讓網站變得更加完整與實用。
+                    </p>
+                </div>
             </div>
         </div>
-
-        <div class="team-member reverse">
-            <div class="team-image">
-                <img src="image/liao.jpg" alt="廖珮辰">
-            </div>
-            <div class="team-content">
-                <h3>11214257 廖珮辰</h3>
-                <p>
-                    很開心能與不同系、不同國籍的同學合作完成這次期末專案。
-                    在團隊中，我從組員身上學到許多實作經驗，也更清楚理解整學期所學內容在實務上的應用。
-                    雖然過程複雜，但完成後帶來很大的成就感，也讓我對未來進一步學習後端技術產生興趣。
-                </p>
-            </div>
-        </div>
-
-        <div class="team-member">
-            <div class="team-image">
-                <img src="image/mar.jpg" alt="黃明慧">
-            </div>
-            <div class="team-content">
-                <h3>11344274 黃明慧</h3>
-                <p>
-                    這次做多媒體期末專案對我來說是一個很新的經驗。一開始我其實有點擔心自己做不出來，因為要完成的是一個真正的電商網站，而不只是單純的練習頁面。不過在實際開始進行之後，雖然過程中遇到不少困難，但在一步一步完成功能的同時，也慢慢累積了成就感。
-                    這個專案最大的收穫，是讓我更熟悉 HTML、CSS 和 JavaScript 的使用方式。以前上課多半只是照著範例做，但這次需要自己思考功能流程，像是購物流程、畫面排版與購物車等，也常常遇到奇怪的錯誤需要 Debug。雖然花了不少時間，但每次成功解決問題時，都會有種「原來如此」的開心感。另外，小組合作也讓我學到很多，我們會互相幫忙、一起討論卡住的地方，讓我更清楚了解專案其實不是一個人就能完成的，溝通與合作真的非常重要。
-                    雖然網站還有可以改進的地方，例如程式架構或介面細節，但我覺得以學生專案來說，我已經盡力完成，也從中學到了很多。這次期末專案不只是完成了一個網站，也讓我對前端設計更感興趣，同時也增加了我對自己的信心，覺得只要願意努力，其實我也做得到。
-                </p>
-            </div>
-        </div>
-
-        <div class="team-member reverse">
-            <div class="team-image">
-                <img src="image/vir.jpg" alt="黃飛立">
-            </div>
-            <div class="team-content">
-                <h3>11344275 黃飛立</h3>
-                <p>
-                    在製作這個網站的過程中，我對網頁設計與網站功能有了更深入的認識。從一開始規劃網站的整體架構，到實際設計版面配置與功能操作，每一個步驟都需要仔細思考，才能讓網站使用起來順暢又清楚。
-                    在設計網站時，我學到網站架構的重要性。如果頁面分類不清楚，使用者在瀏覽時會感到困惑。因此，我在規劃時特別注意導覽列與頁面順序，希望使用者可以很快找到需要的資訊。這讓我了解到，好的網站不只是外觀好看，更重要的是操作方便。
-                    在實作購物車功能的過程中，我學到了如何讓網站具有互動性，也更加了解使用者體驗的重要性。像是商品加入購物車後即時顯示、可以調整商品數量，以及重新整理頁面後資料仍然保留，這些功能都能讓使用者在購物時感到更方便，也更願意繼續使用網站。
-                    此外，在網頁排版方面，我也學會使用簡單且一致的設計方式，讓畫面看起來整齊、不雜亂。透過這次的練習，我開始注意文字大小、圖片位置與空白間距，這些細節都會影響使用者閱讀與操作的感受。
-                    整體來說，這次網站製作是一個非常實用的學習經驗。它不只讓我將課堂上學到的理論實際應用出來，也提升了我解決問題與獨立完成作品的能力。未來如果還有相關的課程或專題，我希望能加入更多進階功能，讓網站變得更加完整與實用。
-                </p>
-            </div>
-        </div>
-
-    </div>
-</section>
+    </section>
 
     <section id="contact" class="contact">
         <div class="container">
@@ -320,18 +314,10 @@
                     <img src="" alt="" id="modal-product-image">
                 </div>
                 <div class="product-modal-content">
-                    <div class="product-comments">
-                        <h4>Comments</h4>
-                        <div class="comment-list" id="comment-list"></div>
-
-                        <textarea id="comment-input" placeholder="Write a comment..."></textarea>
-                        <button class="btn" id="add-comment">Post</button>
-                    </div>
                     <h2 id="modal-product-title"></h2>
                     <div class="product-modal-price" id="modal-product-price"></div>
-                    <div class="product-modal-description" id="modal-product-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
-                    </div>
+                    <div class="product-modal-description" id="modal-product-description"></div>
+                    
                     <div class="quantity-selector">
                         <button class="decrease-qty">-</button>
                         <input type="number" value="1" min="1" id="product-quantity">
@@ -340,6 +326,35 @@
                     <div class="product-modal-actions">
                         <button class="btn" id="add-to-cart-modal">Add to Cart</button>
                         <button class="btn btn-outline">Wishlist</button>
+                    </div>
+                    
+                    <div class="product-comments">
+                        <h4>Customer Reviews</h4>
+                        <div class="rating-summary" id="rating-summary">
+                            <div class="average-rating">
+                                <span class="rating-number">0.0</span>
+                                <div class="stars"></div>
+                                <span class="review-count">0 reviews</span>
+                            </div>
+                        </div>
+                        
+                        <div class="add-review">
+                            <h5>Write a Review</h5>
+                            <div class="rating-input">
+                                <span>Your Rating:</span>
+                                <div class="star-rating" id="star-rating">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                </div>
+                            </div>
+                            <textarea id="comment-input" placeholder="Share your experience with this product..."></textarea>
+                            <button class="btn" id="add-comment">Submit Review</button>
+                        </div>
+                        
+                        <div class="comment-list" id="comment-list"></div>
                     </div>
                 </div>
             </div>
@@ -353,7 +368,6 @@
             <button class="close-cart">&times;</button>
         </div>
         <div class="cart-items" id="cart-items">
-            <!-- Cart items will be added here dynamically -->
             <div class="cart-empty">
                 <i class="fas fa-shopping-bag"></i>
                 <p>Your bag is empty</p>
@@ -376,18 +390,14 @@
             <h3>Your Wishlist</h3>
             <button class="close-wishlist">&times;</button>
         </div>
-
         <div class="wishlist-items" id="wishlist-items">
             <p style="text-align:center;">Your wishlist is empty</p>
         </div>
     </div>
 
-
     <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
-     <script src="assets/script.js"></script>
-
+    <script src="assets/script.js"></script>
 </body>
-
 </html>
