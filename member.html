@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard | Yvette Harlow</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .member-section {
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            background: var(--light);
+        }
+        .member-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .member-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        .tab-content {
+            display: none;
+            animation: fadeInUp 0.3s ease;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .member-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+        }
+        .member-info {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        .member-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: var(--accent);
+        }
+        .member-details h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        .member-details p {
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .order-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .order-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .order-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .order-details {
+            flex: 1;
+        }
+        .order-status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-processing {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status-shipped {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .wishlist-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .wishlist-item:hover {
+            transform: translateY(-5px);
+        }
+        .wishlist-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .wishlist-item-info {
+            padding: 15px;
+        }
+        .settings-form {
+            max-width: 600px;
+        }
+        .settings-form input,
+        .settings-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container header-container">
+            <div class="logo">
+                <h1>YVETTE HARLOW</h1>
+                <p>Freedom in Fashion</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#collections">Collections</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li>
+                        <a href="#" id="cart-toggle" class="cart-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="member-section">
+        <div class="container member-container">
+            <h2 class="section-title">Member Dashboard</h2>
+            
+            <div class="member-tabs">
+                <button class="tab-btn active" data-tab="profile">
+                    <i class="fas fa-user"></i> Profile
+                </button>
+                <button class="tab-btn" data-tab="orders">
+                    <i class="fas fa-shopping-bag"></i> Orders
+                </button>
+                <button class="tab-btn" data-tab="wishlist">
+                    <i class="fas fa-heart"></i> Wishlist
+                </button>
+                <button class="tab-btn" data-tab="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+
+            <!-- Profile Tab -->
+            <div class="tab-content active" id="profile-tab">
+                <div class="member-card">
+                    <div class="member-info">
+                        <div class="member-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="member-details">
+                            <h3>Welcome back, <span id="member-name">Guest User</span>!</h3>
+                            <p><i class="fas fa-envelope"></i> <span id="member-email">guest@example.com</span></p>
+                            <p><i class="fas fa-phone"></i> <span id="member-phone">+62 812-3456-7890</span></p>
+                            <p><i class="fas fa-map-marker-alt"></i> <span id="member-address">Jakarta, Indonesia</span></p>
+                            <p><i class="fas fa-calendar"></i> Member since: <span id="member-since">January 2024</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="member-card">
+                    <h3 style="margin-bottom: 20px;">Quick Stats</h3>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center;">
+                        <div>
+                            <h2 style="color: var(--accent); margin-bottom: 5px;">5</h2>
+                            <p style="color: var(--text);">Total Orders</p>
+                        </div>
+                        <div>
+                            <h2 style="color: var(--accent); margin-bottom: 5px;">3</h2>
+                            <p style="color: var(--text);">Wishlist Items</p>
+                        </div>
+                        <div>
+                            <h2 style="color: var(--accent); margin-bottom: 5px;">12</h2>
+                            <p style="color: var(--text);">Reviews Written</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Tab -->
+            <div class="tab-content" id="orders-tab">
+                <div class="member-card">
+                    <h3 style="margin-bottom: 20px;">Order History</h3>
+                    
+                    <div class="order-item">
+                        <div class="order-image">
+                            <img src="image/Y3.jpg" alt="Product">
+                        </div>
+                        <div class="order-details">
+                            <h4>Order #12345</h4>
+                            <p>Daiquiri Dress × 1</p>
+                            <p><strong>Rp 119.000</strong></p>
+                            <span class="order-status status-completed">Completed</span>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="color: var(--text); font-size: 14px;">Dec 20, 2024</p>
+                            <button class="btn btn-outline" style="margin-top: 10px; padding: 6px 15px; font-size: 14px;">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="order-item">
+                        <div class="order-image">
+                            <img src="image/Y2.jpg" alt="Product">
+                        </div>
+                        <div class="order-details">
+                            <h4>Order #12344</h4>
+                            <p>Clover Baby ~ Tanks × 2</p>
+                            <p><strong>Rp 278.000</strong></p>
+                            <span class="order-status status-shipped">Shipped</span>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="color: var(--text); font-size: 14px;">Dec 18, 2024</p>
+                            <button class="btn btn-outline" style="margin-top: 10px; padding: 6px 15px; font-size: 14px;">Track Order</button>
+                        </div>
+                    </div>
+
+                    <div class="order-item">
+                        <div class="order-image">
+                            <img src="image/Y4.jpg" alt="Product">
+                        </div>
+                        <div class="order-details">
+                            <h4>Order #12343</h4>
+                            <p>Chasing Denim × 1</p>
+                            <p><strong>Rp 99.000</strong></p>
+                            <span class="order-status status-processing">Processing</span>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="color: var(--text); font-size: 14px;">Dec 15, 2024</p>
+                            <button class="btn btn-outline" style="margin-top: 10px; padding: 6px 15px; font-size: 14px;">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wishlist Tab -->
+            <div class="tab-content" id="wishlist-tab">
+                <div class="member-card">
+                    <h3 style="margin-bottom: 20px;">My Wishlist</h3>
+                    <div class="wishlist-grid" id="member-wishlist-grid">
+                        <!-- Wishlist items will be loaded here dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="member-card">
+                    <h3 style="margin-bottom: 20px;">Account Settings</h3>
+                    <form class="settings-form">
+                        <label><strong>Full Name</strong></label>
+                        <input type="text" value="Guest User">
+                        
+                        <label><strong>Email</strong></label>
+                        <input type="email" value="guest@example.com">
+                        
+                        <label><strong>Phone</strong></label>
+                        <input type="tel" value="+62 812-3456-7890">
+                        
+                        <label><strong>Address</strong></label>
+                        <textarea rows="3">Jl. Example Street No. 123, Jakarta, Indonesia</textarea>
+                        
+                        <button type="submit" class="btn">Save Changes</button>
+                    </form>
+                </div>
+                
+                <div class="member-card">
+                    <h3 style="margin-bottom: 20px;">Change Password</h3>
+                    <form class="settings-form">
+                        <label><strong>Current Password</strong></label>
+                        <input type="password" placeholder="Enter current password">
+                        
+                        <label><strong>New Password</strong></label>
+                        <input type="password" placeholder="Enter new password">
+                        
+                        <label><strong>Confirm New Password</strong></label>
+                        <input type="password" placeholder="Confirm new password">
+                        
+                        <button type="submit" class="btn">Update Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <h3>YVETTE HARLOW</h3>
+                <p>Freedom in Every Stitch</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Yvette Harlow. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.dataset.tab;
+                
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                btn.classList.add('active');
+                document.getElementById(`${targetTab}-tab`).classList.add('active');
+            });
+        });
+
+        // Load wishlist items
+        const products = [
+            { id: 1, title: "Daiquiri Dress", price: 119000, image: "image/Y3.jpg" },
+            { id: 2, title: "Clover Baby ~ Tanks", price: 139000, image: "image/Y2.jpg" },
+            { id: 3, title: "Chasing Denim", price: 99000, image: "image/Y4.jpg" },
+            { id: 4, title: "Southside Beach Shorts", price: 109000, image: "image/Y5.jpg" }
+        ];
+
+        function loadWishlist() {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const grid = document.getElementById('member-wishlist-grid');
+            
+            if (wishlist.length === 0) {
+                grid.innerHTML = '<p style="text-align: center; color: var(--text);">Your wishlist is empty</p>';
+                return;
+            }
+            
+            grid.innerHTML = '';
+            wishlist.forEach(productId => {
+                const product = products.find(p => p.id === productId);
+                if (product) {
+                    const item = document.createElement('div');
+                    item.className = 'wishlist-item';
+                    item.innerHTML = `
+                        <img src="${product.image}" alt="${product.title}">
+                        <div class="wishlist-item-info">
+                            <h4 style="font-size: 14px; margin-bottom: 5px;">${product.title}</h4>
+                            <p style="color: var(--accent); font-weight: 600;">Rp ${product.price.toLocaleString()}</p>
+                            <button class="btn" style="width: 100%; margin-top: 10px; padding: 8px; font-size: 13px;">Add to Cart</button>
+                        </div>
+                    `;
+                    grid.appendChild(item);
+                }
+            });
+        }
+
+        // Load wishlist on page load
+        loadWishlist();
+
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = totalItems;
+        }
+        updateCartCount();
+    </script>
+</body>
+</html>
