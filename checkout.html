@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Yvette Harlow</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header id="main-header">
+    <div class="container header-container">
+        <div class="logo">
+            <h1>YVETTE HARLOW</h1>
+            <p>Freedom in Fashion</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Account</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="contact" style="margin-top:120px;">
+    <div class="container" style="max-width:900px;">
+        <h2 class="section-title">Checkout</h2>
+
+        <div class="contact-container">
+            <!-- Billing Details -->
+            <form class="contact-form">
+                <h3 style="margin-bottom:20px; color:var(--dark);">Billing Details</h3>
+
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Phone Number" required>
+                <input type="text" placeholder="Shipping Address" required>
+
+                <textarea placeholder="Order Notes (Optional)"></textarea>
+            </form>
+
+            <!-- Order Summary -->
+            <div id="order-summary" style="background:var(--light); padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+                <h3 style="margin-bottom:20px; color:var(--dark);">Order Summary</h3>
+
+                <div id="summary-items"></div>
+
+                <hr style="margin:20px 0;">
+
+                <p style="display:flex; justify-content:space-between;">
+                    <span>Subtotal</span>
+                    <strong id="subtotal">Rp 0</strong>
+                </p>
+
+                <p style="display:flex; justify-content:space-between;">
+                    <span>Shipping</span>
+                    <strong>Rp 10.000</strong>
+                </p>
+
+                <hr style="margin:20px 0;">
+
+                <p style="display:flex; justify-content:space-between; font-size:18px;">
+                    <strong>Total</strong>
+                    <strong id="total" style="color:var(--accent);">Rp 0</strong>
+                </p>
+
+                <button id="place-order" class="btn" style="width:100%; margin-top:25px;">
+                    Place Order
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="assets/checkout.js"></script>
+</body>
+</html>
